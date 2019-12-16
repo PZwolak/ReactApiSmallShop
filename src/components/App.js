@@ -3,18 +3,14 @@ import "./App.scss";
 import Header from "./header/Header";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.hanldeInputValue = this.hanldeInputValue.bind(this);
-  }
   state = {
     searchInputValue: "asd"
   };
-  hanldeInputValue() {
+  hanldeInputValue = () => {
     this.setState({
-      searchValue: "aaaaaaaaa"
+      searchInputValue: "aaaaaaaaa"
     });
-  }
+  };
 
   render() {
     return (
