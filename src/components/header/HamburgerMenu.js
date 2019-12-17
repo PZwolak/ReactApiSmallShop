@@ -11,7 +11,7 @@ const HamburgerMenu = () => {
           <span></span>
 
           <ul className="menu__items">
-            <a href="#">
+            <a href="">
               <li>Home</li>
             </a>
             <a href="#">

@@ -6,12 +6,12 @@ import SearchInput from "./SearchInput";
 const Header = props => {
   return (
     <header className="header container mw-100">
-      <div className="row">
+      <div className="row header__row">
         <HamburgerMenu />
-        <button type="text" onClick={props.searchValue}>
-          elo elo leo
-        </button>
-        {/* <SearchInput searchValue={props} /> */}
+        <SearchInput
+          searchValue={props.searchValue}
+          sendInputValue={props.sendInputValue}
+        />
       </div>
     </header>
   );
