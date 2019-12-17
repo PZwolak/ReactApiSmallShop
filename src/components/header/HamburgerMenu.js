@@ -10,7 +10,7 @@ const HamburgerMenu = () => {
           <span></span>
           <span></span>
 
-          <ul className="menu__items">
+          {/* <ul className="menu__items">
             <a href="">
               <li>Home</li>
             </a>
@@ -23,7 +23,7 @@ const HamburgerMenu = () => {
             <a href="#">
               <li>Contact</li>
             </a>
-          </ul>
+          </ul> */}
         </div>
       </nav>
     </div>

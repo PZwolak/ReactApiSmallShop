@@ -10,6 +10,7 @@ class App extends Component {
     searchInputValue: "",
     responseArr: ""
   };
+
   handleResponseArray = x => {
     if (flag === true) {
       flag = false;
@@ -17,8 +18,6 @@ class App extends Component {
         responseArr: x
       });
     }
-
-    // console.log(x);
   };
   // Function for set state from input in header
   hanldeInputValue = e => {
@@ -37,14 +36,13 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.responseArr);
     return (
       <>
         <Header
           searchValue={this.hanldeInputValue}
           sendInputValue={this.handleSendInputValue}
         />
-        <Results response={this.handleResponseArray} />
+        <Results />
       </>
     );
   }
