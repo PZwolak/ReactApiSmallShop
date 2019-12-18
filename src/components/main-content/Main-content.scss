@@ -1,0 +1,9 @@
+@import "./src/components/Variables.scss";
+.dinner {
+  &__tags {
+    background-color: $darkGrey;
+  }
+  &__elements {
+    background-color: $lightGrey;
+  }
+}

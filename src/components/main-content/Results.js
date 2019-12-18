@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Dinner from "./Dinner";
+import "./Main-content.scss";
 const API = "https://www.themealdb.com/api/json/v1/1/search.php?s";
 
 class Results extends Component {
@@ -38,22 +39,14 @@ class Results extends Component {
       console.log(dinner);
     }
     return (
-      <div>
-        <div>aaaaaa</div>
-        <div>
-          <Dinner dinnerData={this.state.dinners} />
-          <button
-            style={{
-              padding: "10px 20px",
-              border: "2px solid black",
-              backgroundColor: "white",
-              margin: 20
-            }}
-          >
-            Dodaj użytkownika
-          </button>
+      <main className="dinner container mw-100">
+        <div className="row">
+          <section className="dinner__tags col-2"></section>
+          <section className="dinner__elements col-10 row">
+            <Dinner dinnerData={this.state.dinners} />
+          </section>
         </div>
-      </div>
+      </main>
     );
   }
 }
