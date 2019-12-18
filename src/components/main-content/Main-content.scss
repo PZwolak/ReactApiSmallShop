@@ -5,5 +5,38 @@
   }
   &__elements {
     background-color: $lightGrey;
+    padding: 45px !important;
+  }
+  &__element {
+    margin-bottom: 25px;
+  }
+  &__element-short {
+    border: 1px solid rgba($black-color, 0.5);
+    border-radius: 6px;
+  }
+  &__element-short-bg {
+  }
+  &__element-short-bg-img {
+    height: 250px;
+  }
+  &__element-short-bg-img {
+    border-radius: 6px 6px 0px 0px;
+    height: 225px;
+    background-color: $white-color;
+    background-size: cover;
+    background-position: center;
+  }
+  &__element-short-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: 0.7;
+    background-color: $white-color;
+    border-radius: 0 0 6px 6px;
+  }
+  &__element-full {
+    display: none;
   }
 }

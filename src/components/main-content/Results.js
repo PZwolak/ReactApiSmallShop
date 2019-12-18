@@ -42,8 +42,10 @@ class Results extends Component {
       <main className="dinner container mw-100">
         <div className="row">
           <section className="dinner__tags col-2"></section>
-          <section className="dinner__elements col-10 row">
-            <Dinner dinnerData={this.state.dinners} />
+          <section className="dinner__elements col-10">
+            <div className="row">
+              <Dinner dinnerData={this.state.dinners} />
+            </div>
           </section>
         </div>
       </main>
