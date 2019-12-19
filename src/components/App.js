@@ -7,6 +7,7 @@ let flag = true;
 
 class App extends Component {
   state = {
+    flag: true,
     searchInputValue: "",
     responseArr: ""
   };
@@ -31,7 +32,8 @@ class App extends Component {
   // Function for set state from input in header throw clicking on magniffying glass
   handleSendInputValue = () => {
     this.setState({
-      searchInputValue: document.querySelector(".search-input__input").value
+      searchInputValue: document.querySelector(".search-input__input").value,
+      flag: true
     });
   };
 
@@ -42,7 +44,10 @@ class App extends Component {
           searchValue={this.hanldeInputValue}
           sendInputValue={this.handleSendInputValue}
         />
-        <Results />
+        <Results
+          searchInputValue={this.state.searchInputValue}
+          stateFlag={this.state.flag}
+        />
       </>
     );
   }

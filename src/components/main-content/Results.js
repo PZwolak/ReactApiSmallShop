@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import Dinner from "./Dinner";
 import "./Main-content.scss";
-const API = "https://www.themealdb.com/api/json/v1/1/search.php?s";
 
 class Results extends Component {
   state = {
-    flag: false,
+    flag: this.props.stateFlag,
     dinners: []
   };
-  componentDidMount() {
+
+  handleChangeStatus = id => {
+    console.log(this);
+  };
+
+  getApi = () => {
+    const API = `https://www.themealdb.com/api/json/v1/1/search.php?s=${this.props.searchInputValue}`;
     const getDinner = () => {
       fetch(API)
         .then(response => {
@@ -19,24 +24,20 @@ class Results extends Component {
         })
         .then(response => response.json())
         .then(response => {
+          console.log("this.state.flag");
           this.setState({
-            flag: true,
+            flag: this.props.stateFlag,
             dinners: response.meals
           });
         })
         .catch(error => console.log(error + " Something went wrong"));
     };
     getDinner();
-  }
+  };
 
   render() {
     if (this.state.flag === true) {
-      console.log(this.state.dinners);
-      console.log("--------------------------------");
-      const dinner = this.state.dinners.map(el => {
-        return <div>{el.idMeal}</div>;
-      });
-      console.log(dinner);
+      this.getApi();
     }
     return (
       <main className="dinner container mw-100">
@@ -44,7 +45,11 @@ class Results extends Component {
           <section className="dinner__tags col-2"></section>
           <section className="dinner__elements col-10">
             <div className="row">
-              <Dinner dinnerData={this.state.dinners} />
+              <Dinner
+                dinnerData={this.state.dinners}
+                changeStatus={this.handleChangeStatus}
+                searchInputValue={this.props.searchInputValue}
+              />
             </div>
           </section>
         </div>
